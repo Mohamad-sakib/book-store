@@ -7,7 +7,8 @@ export const BookDetail = () => {
   const { id } = useParams();
   const book = books.find((book) => book.id === Number(id));
   return (
-    books.length > 0 && (
+    books.length > 0 &&
+    book && (
       <div>
         <h3>
           {book.title} by {book.author}
