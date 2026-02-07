@@ -5,11 +5,13 @@ import { BookContext } from "../contexts/bookContext";
 export const Books = () => {
   const { books } = useContext(BookContext);
   return (
-    <div>
-      <h1>ALL BOOKS</h1>
-      {books.map((book) => (
-        <Book book={book} />
-      ))}
-    </div>
+    books.length > 0 && (
+      <div>
+        <h1>ALL BOOKS</h1>
+        {books.map((book) => (
+          <Book book={book} key={book.id} />
+        ))}
+      </div>
+    )
   );
 };
